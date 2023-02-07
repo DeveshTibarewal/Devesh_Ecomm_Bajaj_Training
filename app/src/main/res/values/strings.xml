@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Devesh Ecomm</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="logo">Logo</string>
+    <string name="content_description_back_button">This button is to go to the previous activity or fragment</string>
+    <string name="login_label">Login To Your Account</string>
+    <string name="not_have_account_register">Don\'t Have Account? <b>Register</b></string>
+    <string name="hint_password">Password</string>
+    <string name="hint_email">Email</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="register_label">Create a New Account</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_phone">Phone</string>
+    <string name="hint_dob">Date of Birth (dd/mm/yyyy)</string>
+    <string name="already_have_account_login">Already have Account? <b>Login</b></string>
+    <string name="remove_item_to_cart">Remove item to cart</string>
+    <string name="add_item_to_cart">Add item to cart</string>
+    <string name="products">Products</string>
+    <string name="no_internet_connection">No Internet Connection</string>
+    <string name="item_name">Item Name</string>
+    <string name="cart_items">Cart Items</string>
+    <string name="remove">Remove</string>
+    <string name="qty">1</string>
+    <string name="qty_label">Qunatity:</string>
+    <string name="close_button">Close Button</string>
+    <string name="fab_button">Fab Button</string>
+    <string name="checkout">Checkout</string>
+    <string name="to_remove_items">To remove items</string>
+    <string name="cart_empty_desc">The cart is empty, No Items in the cart please add items in the cart.</string>
+    <string name="cart_is_empty">Cart is empty</string>
+    <string name="product_details">Product Details</string>
+    <string name="description">Description</string>
+    <string name="title">Title</string>
+</resources>

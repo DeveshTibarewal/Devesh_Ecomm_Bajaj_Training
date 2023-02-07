@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height">
+
+        <!--ImageButton: Click to go back-->
+        <ImageButton
+            android:id="@+id/closeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/close_button"
+            android:padding="10dp"
+            android:src="@drawable/ic_close" />
+
+        <!--TextView: Toolbar Title-->
+        <TextView
+            android:id="@+id/toolbarTitleTv"
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:layout_toEndOf="@id/closeBtn"
+            android:layout_toStartOf="@id/removeAllBtn"
+            android:text="@string/cart_items" />
+
+        <!--View: To make Toolbar look separate from other UI-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/gray_200" />
+
+        <!--ImageButton: Click to go back-->
+        <ImageButton
+            android:id="@+id/removeAllBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/close_button"
+            android:padding="10dp"
+            android:src="@drawable/ic_remove_all" />
+
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/cartItemsSv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:layout_below="@id/toolbarRl">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cartItemsRv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:paddingVertical="5dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/row_cart_item" />
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/emptyCartRl"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:visibility="gone"
+        android:layout_below="@id/toolbarRl"
+        android:layout_margin="5dp"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/noItemsIv"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="10dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_empty_cart"
+            android:contentDescription="@string/cart_is_empty" />
+
+        <TextView
+            android:id="@+id/noNetworkTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/noItemsIv"
+            android:layout_centerHorizontal="true"
+            android:maxWidth="250dp"
+            android:text="@string/cart_empty_desc"
+            android:textAlignment="center" />
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/cartItemsPb"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_below="@id/toolbarRl"
+        android:layout_margin="50dp"
+        android:visibility="gone"
+        android:layout_centerInParent="true" />
+
+    <Button
+        android:id="@+id/checkOutBtn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:visibility="visible"
+        android:layout_below="@id/cartItemsSv"
+        android:text="@string/checkout" />
+
+</RelativeLayout>
