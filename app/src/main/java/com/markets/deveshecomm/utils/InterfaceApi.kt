@@ -11,5 +11,5 @@ interface InterfaceApi {
     fun getAllProducts(): Call<List<ModelProduct>>
 
     @GET("products/{id}")
-    fun getProduct(@Path(value="id") id:Int): Call<ModelProduct>
+    fun getProduct(@Path(value = "id") id: Int): Call<ModelProduct>
 }

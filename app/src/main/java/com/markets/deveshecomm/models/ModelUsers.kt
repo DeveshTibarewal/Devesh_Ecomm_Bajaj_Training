@@ -2,7 +2,6 @@ package com.markets.deveshecomm.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import org.jetbrains.annotations.NotNull
 
 @Entity(tableName = "users")
 class ModelUsers {

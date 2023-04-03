@@ -1,7 +1,6 @@
 package com.markets.deveshecomm.activities
 
 import android.os.Bundle
-import androidx.activity.OnBackPressedDispatcher
 import androidx.appcompat.app.AppCompatActivity
 import com.markets.deveshecomm.R
 import com.markets.deveshecomm.Utils
@@ -17,7 +16,6 @@ class ProductDetailsActivity : AppCompatActivity() {
         binding = ActivityProductDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val id = intent.extras?.getString("PRODUCT_ID")?.toInt()
         val title = intent.extras?.getString("PRODUCT_TITLE")
         val description = intent.extras?.getString("PRODUCT_DESCRIPTION")
         val image = intent.extras?.getString("PRODUCT_IMAGE")
@@ -34,7 +32,7 @@ class ProductDetailsActivity : AppCompatActivity() {
         }
 
         binding.toolbarBackBtn.setOnClickListener {
-            onBackPressed()
+            onBackPressedDispatcher.onBackPressed()
         }
 
     }

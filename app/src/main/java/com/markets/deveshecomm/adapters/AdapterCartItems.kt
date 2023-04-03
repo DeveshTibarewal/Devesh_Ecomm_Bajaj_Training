@@ -16,7 +16,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class AdapterCartItems(var context: Context, var cartItemsList: ArrayList<ModelItems>) :
+class AdapterCartItems(var context: Context, private var cartItemsList: ArrayList<ModelItems>) :
     RecyclerView.Adapter<AdapterCartItems.HolderCartItem>() {
 
     private lateinit var databaseEcomm: DatabaseEcomm
@@ -47,7 +47,6 @@ class AdapterCartItems(var context: Context, var cartItemsList: ArrayList<ModelI
             cartItemsList.removeAt(position)
             (context as DashboardActivity).refreshCartItemsDialog(cartItemsList)
             notifyItemRemoved(position)
-            notifyDataSetChanged()
         }
 
         holder.binding.nameTv.text = cartItemsList[position].name

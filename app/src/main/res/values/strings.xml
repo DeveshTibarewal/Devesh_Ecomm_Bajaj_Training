@@ -1,9 +1,7 @@
 <resources>
     <string name="app_name">Devesh Ecomm</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="logo">Logo</string>
-    <string name="content_description_back_button">This button is to go to the previous activity or fragment</string>
+    <string name="content_description_back_button">Back</string>
     <string name="login_label">Login To Your Account</string>
     <string name="not_have_account_register">Don\'t Have Account? <b>Register</b></string>
     <string name="hint_password">Password</string>
@@ -24,7 +22,7 @@
     <string name="cart_items">Cart Items</string>
     <string name="remove">Remove</string>
     <string name="qty">1</string>
-    <string name="qty_label">Qunatity:</string>
+    <string name="qty_label">Quantity:</string>
     <string name="close_button">Close Button</string>
     <string name="fab_button">Fab Button</string>
     <string name="checkout">Checkout</string>
@@ -34,4 +32,10 @@
     <string name="product_details">Product Details</string>
     <string name="description">Description</string>
     <string name="title">Title</string>
+    <string name="no_network_description">No Internet Connection, Please check you network connection and Try Again</string>
+    <string name="refresh">Refresh</string>
+    <string name="count_text">(100)</string>
+    <string name="price_holder">₹500.00</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="qty_tag">1</string>
 </resources>

@@ -2,13 +2,11 @@ package com.markets.deveshecomm.adapters
 
 import android.content.Context
 import android.content.Intent
-import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import androidx.room.Room
 import com.markets.deveshecomm.R
 import com.markets.deveshecomm.Utils
 import com.markets.deveshecomm.activities.ProductDetailsActivity
@@ -25,7 +23,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class AdapterProducts(var context: Context, var productsList: ArrayList<ModelProduct>) :
+class AdapterProducts(var context: Context, private var productsList: ArrayList<ModelProduct>) :
     RecyclerView.Adapter<AdapterProducts.HolderProduct>() {
 
     private lateinit var databaseEcomm: DatabaseEcomm
@@ -46,20 +44,16 @@ class AdapterProducts(var context: Context, var productsList: ArrayList<ModelPro
 
     override fun onBindViewHolder(holder: HolderProduct, position: Int) {
         // init database
-        databaseEcomm =
-            Room.databaseBuilder(holder.binding.root.context, DatabaseEcomm::class.java, "ecomm")
-                .fallbackToDestructiveMigration().build()
+        databaseEcomm = DatabaseEcomm.getDatabase(holder.binding.root.context)
         item = ModelItems()
 
         CoroutineScope(Dispatchers.IO).launch {
-            val tempItem: ModelItems? =
-                databaseEcomm.daoItems().readItem(productsList[position].id.toInt())
+            val tempItem = databaseEcomm.daoItems().readItem(productsList[position].id.toInt())
 
-            if (tempItem != null) {
+            tempItem?.let {
                 holder.binding.addToCartBtn.visibility = View.GONE
                 holder.binding.qtyLl.visibility = View.VISIBLE
-
-                holder.binding.qtyTv.text = tempItem.quantity
+                holder.binding.qtyTv.text = it.quantity
             }
         }
         // set data to views

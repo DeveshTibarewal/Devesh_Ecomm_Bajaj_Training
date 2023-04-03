@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "909752493689",
+    "project_id": "devesh-ecomm",
+    "storage_bucket": "devesh-ecomm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:909752493689:android:4be8ab5fd6dd1d65c616a8",
+        "android_client_info": {
+          "package_name": "com.markets.deveshecomm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "909752493689-4ijm40aj2vd8jeg9dtf8jkdlub4udmcd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBp8qeQx1yfNOLWx4xEy03_rgcqcroJdOg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "909752493689-4ijm40aj2vd8jeg9dtf8jkdlub4udmcd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

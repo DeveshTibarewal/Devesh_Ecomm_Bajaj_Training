@@ -1,7 +1,5 @@
 package com.markets.deveshecomm.models
 
-import android.media.Rating
-
 data class ModelProduct(
     var id: String,
     var title: String,

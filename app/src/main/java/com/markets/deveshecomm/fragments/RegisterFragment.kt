@@ -3,7 +3,6 @@ package com.markets.deveshecomm.fragments
 import android.app.DatePickerDialog
 import android.icu.text.SimpleDateFormat
 import android.os.Bundle
-import android.util.Log
 import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
@@ -15,16 +14,12 @@ import com.markets.deveshecomm.R
 import com.markets.deveshecomm.databases.DatabaseEcomm
 import com.markets.deveshecomm.databinding.FragmentRegisterBinding
 import com.markets.deveshecomm.models.ModelUsers
-import com.markets.deveshecomm.utils.InterfaceApi
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.util.*
 
 class RegisterFragment : Fragment() {
-
-    // TAG for logging
-    private val TAG: String = "REGISTER_TAG"
 
     // database components
     private lateinit var databaseEcomm: DatabaseEcomm
@@ -156,12 +151,6 @@ class RegisterFragment : Fragment() {
             user.email = email
             user.password = password
             databaseEcomm.daoUsers().insertUser(user)
-
-//            CoroutineScope(Dispatchers.IO).launch {
-//                databaseEcomm.daoUsers().readUser().forEach {
-//                    Log.i(TAG, "$it")
-//                }
-//            }
 
         }
         findNavController().navigate(R.id.action_registerFragment_to_loginFragment)

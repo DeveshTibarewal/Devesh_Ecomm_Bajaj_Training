@@ -57,7 +57,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="3dp"
-                android:text="(100)" />
+                android:text="@string/count_text" />
 
         </LinearLayout>
 
@@ -70,7 +70,7 @@
             android:layout_marginTop="5dp"
             android:maxWidth="200dp"
             android:paddingHorizontal="5dp"
-            android:text="Title"
+            android:text="@string/title"
             android:textColor="?attr/colorPrimary"
             android:textStyle="bold" />
 
@@ -82,7 +82,7 @@
             android:layout_below="@id/titleTv"
             android:maxWidth="200dp"
             android:paddingHorizontal="5dp"
-            android:text="₹500.00" />
+            android:text="@string/price_holder" />
 
 
         <com.google.android.material.button.MaterialButton
@@ -91,7 +91,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/priceTv"
             android:padding="5dp"
-            android:text="Add to Cart"
+            android:text="@string/add_to_cart"
             android:visibility="visible"
             app:icon="@drawable/ic_add_cart"
             app:iconPadding="5dp" />
@@ -121,7 +121,7 @@
                 android:background="@drawable/border_card_view"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="5dp"
-                android:text="1" />
+                android:text="@string/qty_tag" />
 
             <ImageButton
                 android:id="@+id/addBtn"

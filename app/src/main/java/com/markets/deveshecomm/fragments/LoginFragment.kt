@@ -2,45 +2,30 @@ package com.markets.deveshecomm.fragments
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import androidx.room.Room
 import com.markets.deveshecomm.R
 import com.markets.deveshecomm.Utils
 import com.markets.deveshecomm.activities.DashboardActivity
 import com.markets.deveshecomm.databases.DatabaseEcomm
 import com.markets.deveshecomm.databinding.FragmentLoginBinding
-import com.markets.deveshecomm.models.ModelUsers
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class LoginFragment : Fragment() {
 
-
-    // database components
     private lateinit var databaseEcomm: DatabaseEcomm
-    private lateinit var user: ModelUsers
 
-    // binding the view (fragment_login.xml)
     private lateinit var binding: FragmentLoginBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    ): View {
         binding = FragmentLoginBinding.inflate(layoutInflater)
 
-        // init database
-        // init Database
-        databaseEcomm =
-            Room.databaseBuilder(binding.root.context, DatabaseEcomm::class.java, "ecomm")
-                .fallbackToDestructiveMigration().build()
+        databaseEcomm = DatabaseEcomm.getDatabase(binding.root.context)
 
         binding.toolbarBackBtn.setOnClickListener {
             findNavController().popBackStack()
@@ -51,7 +36,6 @@ class LoginFragment : Fragment() {
         }
 
         binding.loginBtn.setOnClickListener {
-            // Handle login Btn Click
             validateData()
         }
 
@@ -62,16 +46,9 @@ class LoginFragment : Fragment() {
     private lateinit var password: String
 
     private fun validateData() {
-        CoroutineScope(Dispatchers.IO).launch {
-            databaseEcomm.daoUsers().readUser().forEach {
-                Log.e("TAG", "$it")
-            }
-        }
-
-        // input data
         email = binding.emailEt.text.toString().trim()
         password = binding.passwordEt.text.toString()
-        // validate data
+
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             // email pattern is invalid, show error
             binding.emailEt.error = "Invalid Email..."
@@ -96,7 +73,5 @@ class LoginFragment : Fragment() {
                 Utils.toast(binding.root.context, "Please enter valid email and password...")
             }
         }
-
     }
-
 }
